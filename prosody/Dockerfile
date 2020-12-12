@@ -4,6 +4,7 @@ FROM ${JITSI_REPO}/base as builder
 
 RUN \
     apt-dpkg-wrap apt-get update \
+    apt-dpkg-wrap apt-get upgrade \
     && apt-dpkg-wrap apt-get install -y \
       lua5.2 \
       liblua5.2-dev \
