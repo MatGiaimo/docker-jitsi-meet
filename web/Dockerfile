@@ -7,9 +7,9 @@ COPY rootfs/ /
 RUN \
 	apt-dpkg-wrap apt-get update && \
 	apt-dpkg-wrap apt-get install -y wget && \
-	wget https://github.com/MatGiaimo/jitsi-meet/releases/download/V1.4/jitsi-meet-web_1.0.1-1_all.deb && \
+	wget https://github.com/MatGiaimo/jitsi-meet/releases/download/V1.5/jitsi-meet-web_1.0.1-1_all.deb && \
 	apt-dpkg-wrap apt-get install -y cron nginx-extras ./jitsi-meet-web_1.0.1-1_all.deb socat && \
-	wget https://github.com/MatGiaimo/jitsi-meet/releases/download/V1.4/jitsi-meet-web-config_1.0.1-1_all.deb && \
+	wget https://github.com/MatGiaimo/jitsi-meet/releases/download/V1.5/jitsi-meet-web-config_1.0.1-1_all.deb && \
 	apt-dpkg-wrap apt-get -d install -y ./jitsi-meet-web-config_1.0.1-1_all.deb && \
   dpkg -x ./jitsi-meet-web-config*.deb /tmp/pkg && \
   mv /tmp/pkg/usr/share/jitsi-meet-web-config/config.js /defaults && \
